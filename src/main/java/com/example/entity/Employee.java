@@ -22,6 +22,7 @@ public class Employee {
     private Integer salary;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+   //nazwa tabeli                              id jednej strony                                             id drugiej strony
     @JoinTable(name = "employee_training", joinColumns = @JoinColumn(name = "id_employee"), inverseJoinColumns = @JoinColumn(name = "id_training"))
     private List<Training> trainings;
 
@@ -58,6 +59,14 @@ public class Employee {
 
     public void setSalary(Integer salary) {
         this.salary = salary;
+    }
+
+    public List<Training> getTrainings() {
+        return trainings;
+    }
+
+    public void setTrainings(List<Training> trainings) {
+        this.trainings = trainings;
     }
 
     @Override
