@@ -29,6 +29,12 @@ public class Employee {
     public Employee() {
     }
 
+    public Employee(String firstName, String lastname, int salary) {
+        this.firstName = firstName;
+        this.lastName = lastname;
+        this.salary = salary;
+    }
+
     public Integer getIdEmployee() {
         return idEmployee;
     }
